@@ -1,0 +1,28 @@
+name: Practice Makefile
+on: [push]
+jobs:
+  run-tests:
+    runs-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: 3.11
+
+      - name: install dependencies
+        run: ¦ 
+          make install
+      - name: lint 
+        run: ¦
+          make lint
+      - name: format
+        run: ¦
+          make format
+     - name: tests 
+       run: ¦
+         make test
+        
+
+
+    
